@@ -13,6 +13,3 @@ class Estudiante(usu.Usuario):
     
     def matricularEnCurso(self, curso: cur.Curso):
         self._misCursos.append(curso)
-
-    #def __str__(self) -> str:
-    #    return super().__str__()

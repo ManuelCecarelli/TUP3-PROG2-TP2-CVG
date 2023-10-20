@@ -28,6 +28,22 @@ registroProfesores.append(profesorUno)
 registroProfesores.append(profesorDos)
 registroProfesores.append(profesorTres)
 
+#Instanciamos algunos cursos
+cursoUno = cur.Curso("Ingles I")
+cursoDos = cur.Curso("Ingles II")
+cursoTres = cur.Curso("Laboratorio I")
+cursoCuatro = cur.Curso("Laboratorio II")
+cursoCinco = cur.Curso("Programación I")
+cursoSeis = cur.Curso("Programación II")
+
+#los agregamos a la lista
+registroCursos.append(cursoUno)
+registroCursos.append(cursoDos)
+registroCursos.append(cursoTres)
+registroCursos.append(cursoCuatro)
+registroCursos.append(cursoCinco)
+registroCursos.append(cursoSeis)
+
 respuesta = ""
 
 def menu_principal():
@@ -35,6 +51,11 @@ def menu_principal():
     print("2. Ingresar como profesor")
     print("3. Ver cursos")
     print("4. Salir")
+def submenu_alumno():
+    print("1. Matricularse a un curso")
+    print("2. Ver curso")
+    print("3. Volver al menu principal")
+   
 
 '''APLICACION PRINCIPAL'''
 #---------------------------------------------------------
@@ -49,7 +70,61 @@ while respuesta != "salir":
 
     if opt.isnumeric():
         if int(opt) == 1:
-            pass
+            emailIngresado = input("Ingrese su email")
+            contraseniaIngresada = input("Ingrese su contraseña")
+            i=0
+            banderaEmail=False
+            while (banderaEmail==False and i <len(registroEstudiantes)):
+                auxalumnos= registroEstudiantes[i]
+                if (emailIngresado == auxalumnos.email):
+                    banderaEmail=True
+                
+                
+                    
+            
+                    if (auxalumnos.validarCredenciales(emailIngresado, contraseniaIngresada)):
+                        option = ""
+                        while(option !="3"):
+                            submenu_alumno()
+                            option = input("\nIngrese la opción de menú: ")
+                            os.system ("cls") #Limpiar pantalla
+                            if opt.isnumeric():
+                                if int(option) == 1:
+                                    for i in range(len(registroCursos)):
+                                        auxcur=registroCursos[i]
+                                        print(f"{i+1}. {auxcur.nombre}")
+                                
+                                    opcion=input("Seleccione el curso")
+                                    if int(opcion) in [1,2,3,4,5,6]:
+                                        if registroCursos[int(opcion)] not in auxalumnos.misCursos:
+                                            auxalumnos.matricularEnCurso(registroCursos[int(opcion)])
+                                            print("Alumno matriculado correctamente")
+                                        else:
+                                            print("El alumno ya fue antiguamente matriculado")
+                                            input("")
+
+
+
+                                
+                                
+                i=i+1
+
+
+
+
+                
+               
+            if (banderaEmail == False):
+                input("email inexistente, Debe darse de alta en alumnado")
+
+           
+
+    
+      
+            
+
+            
+        
         elif int(opt) == 2:
             pass
         elif int(opt) == 3:
