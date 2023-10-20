@@ -9,24 +9,24 @@ registroEstudiantes = []
 registroCursos = []
 
 #instanciamos algunos estudiantes 
-#estudianteUno = est.Estudiante()
-#estudianteDos = est.Estudiante()
-#estudianteTres = est.Estudiante()
+estudianteUno = est.Estudiante(53019,2023,"Manuel","Cecarelli","manuelcecarelli@gmail.com","35750423")
+estudianteDos = est.Estudiante(53041,2023,"Danisa","Gomez","danisagomez86@gmail.com","33105762")
+estudianteTres = est.Estudiante(53289,2023,"Jeremias","Zagaglia","jeremiaszagaglia@gmail.com","44995290")
 
 #los agregamos a la lista
-#registroEstudiantes.append(estudianteUno)
-#registroEstudiantes.append(estudianteDos)
-#registroEstudiantes.append(estudianteTres)
+registroEstudiantes.append(estudianteUno)
+registroEstudiantes.append(estudianteDos)
+registroEstudiantes.append(estudianteTres)
 
 #instanciamos algunos profesores
-#profesorUno = prof.Profesor()
-#profesorDos = prof.Profesor()
-#profesorTres = prof.Profesor()
+profesorUno = prof.Profesor("Ingeniería en Sistemas",2020,"Ricardo","Ruben","ricardoruben@gmail.com","11223344")
+profesorDos = prof.Profesor("Profesorado en matemáticas",2005,"Monica","Perez","moniperez@gmail.com","11111111")
+profesorTres = prof.Profesor("Profesorado en Inglés",1998,"Martina","Gonzalez","martinagonzalez@gmail.com","22222222")
 
 #los agregamos a la lista
-#registroProfesores.append(profesorUno)
-#registroProfesores.append(profesorDos)
-#registroProfesores.append(profesorTres)
+registroProfesores.append(profesorUno)
+registroProfesores.append(profesorDos)
+registroProfesores.append(profesorTres)
 
 respuesta = ""
 
