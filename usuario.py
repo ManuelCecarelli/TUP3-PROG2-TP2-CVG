@@ -7,12 +7,23 @@ class Usuario(ABC):
         self._email = email
         self._contrasenia = contrasenia
         self._misCursos = []
+
+    @property
+    def nombre(self):
+        return self._nombre
+    
+    @property
+    def apellido(self):
+        return self._apellido
+
+    @property
+    def email(self):
+        return self._email
+    
     @property
     def misCursos(self):
         return self._misCursos
-    @property
-    def email(self):
-     return self._email
+    
     @abstractclassmethod
     def __str__(self) -> str:
         pass
