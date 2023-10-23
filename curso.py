@@ -10,6 +10,14 @@ class Curso:
         mensaje = f"\nNombre: {self.__nombre}\nContraseña: {self.__contraseniaMatriculacion}"
         return mensaje
     
+    @property
+    def nombre(self):
+        return self.__nombre
+    
+    @property
+    def contraseniaMatriculacion(self):
+        return self.__contraseniaMatriculacion
+    
     @classmethod
     def __generarContrasenia(cls) -> str:
         characters = string.ascii_letters + string.digits
