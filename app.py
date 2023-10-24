@@ -78,30 +78,34 @@ while respuesta != "salir":
                             os.system ("cls") #Limpiar pantalla
                             if opt2.isnumeric():
                                 if int(opt2) == 1:
-                                    for i in range(len(registroCursos)):
-                                        auxCurso = registroCursos[i]
-                                        print(f"{i+1}. {auxCurso.nombre}")
-                                    opt3=input("\nSeleccione el curso: ")
-                                    if opt3.isnumeric():
-                                        if int(opt3) in [1,2,3,4,5,6]:
-                                            if registroCursos[int(opt3)-1] not in auxAlumno.misCursos:
-                                                auxCurso = registroCursos[int(opt3)-1]
-                                                contrasenia = input("\nIngrese la contraseña de matriculación: ")
-                                                if auxCurso.contraseniaMatriculacion == contrasenia:
-                                                    auxAlumno.matricularEnCurso(registroCursos[int(opt3)-1])
-                                                    print("\nUsted se ha matriculado correctamente")
-                                                    input("\nPresione una tecla para continuar")
+                                    if len(registroCursos) > 0:
+                                        for i in range(len(registroCursos)):
+                                            auxCurso = registroCursos[i]
+                                            print(f"{i+1}. {auxCurso.nombre}")
+                                        opt3=input("\nSeleccione el curso: ")
+                                        if opt3.isnumeric():
+                                            if int(opt3) in [1,2,3,4,5,6]:
+                                                if registroCursos[int(opt3)-1] not in auxAlumno.misCursos:
+                                                    auxCurso = registroCursos[int(opt3)-1]
+                                                    contrasenia = input("\nIngrese la contraseña de matriculación: ")
+                                                    if auxCurso.contraseniaMatriculacion == contrasenia:
+                                                        auxAlumno.matricularEnCurso(registroCursos[int(opt3)-1])
+                                                        print("\nUsted se ha matriculado correctamente")
+                                                        input("\nPresione una tecla para continuar")
+                                                    else:
+                                                        print("\nLa contraseña ingresada es incorrecta")
+                                                        input("\nPresione una tecla para continuar")
                                                 else:
-                                                    print("\nLa contraseña ingresada es incorrecta")
+                                                    print("\nUsted ya se encuentra matriculado en ese curso")
                                                     input("\nPresione una tecla para continuar")
                                             else:
-                                                print("\nUsted ya se encuentra matriculado en ese curso")
+                                                print("\nDebe ingresar una opción válida")
                                                 input("\nPresione una tecla para continuar")
                                         else:
                                             print("\nDebe ingresar una opción válida")
                                             input("\nPresione una tecla para continuar")
                                     else:
-                                        print("\nDebe ingresar una opción válida")
+                                        print("\nLo sentimos, aun no hay cursos disponibles para matricularse")
                                         input("\nPresione una tecla para continuar")
                                 elif int(opt2) == 2:
                                     if len(auxAlumno.misCursos) > 0:
